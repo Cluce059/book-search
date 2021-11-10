@@ -1,15 +1,17 @@
 {
   "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "proxy": "http://localhost:3001",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
   "dependencies": {
-    "@apollo/client": "^3.4.17",
+    "@apollo/react-hooks": "^4.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "apollo-boost": "^0.4.9",
     "bootstrap": "^4.4.1",
-    "graphql": "^16.0.1",
+    "graphql": "^15.3.0",
+    "graphql-tag": "^2.11.0",
     "jwt-decode": "^2.2.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
@@ -17,15 +19,15 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1"
   },
+  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
+  "author": "",
+  "license": "ISC",
   "browserslist": {
     "production": [
       ">0.2%",
