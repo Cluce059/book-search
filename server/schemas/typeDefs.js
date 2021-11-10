@@ -29,6 +29,15 @@ type Book {
 type Auth {
     token: ID!
     user: User
-}`
+}
+input savedBook {
+    description: String
+    title: String
+    bookId: String
+    image: String
+    link: String
+    authors: [String]
+}
+`;
 
-export default typeDefs;
+module.exports = typeDefs;
