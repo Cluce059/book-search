@@ -19,6 +19,7 @@ mutation addUser($username: String!, $password: String!, $email: String!){
             email
             bookCount
             savedBooks{
+                
                 authors
                 bookId
                 image
