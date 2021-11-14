@@ -22,16 +22,16 @@ Use the useMutation() Hook to execute the REMOVE_BOOK
 const SavedBooks = () => {
 //replace useeffect w usequery
   const {loading, data } = useQuery(GET_ME);
-  const [removeBook, {error}] = useMutation(REMOVE_BOOK);
+  const [removeBook] = useMutation(REMOVE_BOOK);
 //?
   //const [userData, setUserData] = useState({});
+  //{}
   const userData = data?.me || [];
+
   // use this to determine if `useEffect()` hook needs to run again
-  const userDataLength = Object.keys(userData).length;
+  //const userDataLength = Object.keys(userData).length;
 
-  
-
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
+    // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
@@ -41,9 +41,10 @@ const SavedBooks = () => {
 
     try {
       //const response = await deleteBook(bookId, token);
-      const {data} = await removeBook({
-        variables: {bookId}
-      });
+      //const {data} = 
+      await removeBook({
+         variables: {bookId}
+       });
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
 

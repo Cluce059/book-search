@@ -19,6 +19,7 @@ const bookSchema = new Schema({
   image: {
     type: String,
   },
+  //link to page from googlebooks api
   link: {
     type: String,
   },

@@ -43,9 +43,11 @@ const SearchBooks = () => {
         authors: book.volumeInfo.authors || ['No author to display'],
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
+        //added link? might help?
+        link: book.volumeInfo.infoLink,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
       }));
-
+    
       setSearchedBooks(bookData);
       setSearchInput('');
     } catch (err) {
@@ -61,13 +63,14 @@ const SearchBooks = () => {
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
     console.log(token);
+    //console.log(bookToSave);
     if (!token) {
       return false;
     }
 
     try {
       const response = await saveBook(bookToSave, token);
-
+      console.log(response);
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
