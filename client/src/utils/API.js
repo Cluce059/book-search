@@ -39,7 +39,7 @@ export const saveBook = (bookData, token) => {
     body: JSON.stringify(bookData),
    
   });
-  console.log(bookData);
+  //console.log(bookData);
 };
 
 // remove saved book data for a logged in user
