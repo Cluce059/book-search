@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 
 // import schema from Book.js
 const bookSchema = require('./Book');
-
 const userSchema = new Schema(
   {
     username: {
@@ -15,11 +14,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      match: [/.+@.+\..+/, 'Must use a valid email address'],
+      match: [/.+@.+\..+/, 'Must use a valid email address']
     },
     password: {
       type: String,
-      required: true,
+      required: true
     },
     // set savedBooks to be an array of data that adheres to the bookSchema
     savedBooks: [bookSchema],
@@ -42,7 +41,7 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-// custom method to compare and validate password for logging in
+//compare passsword with hasheed version when
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
