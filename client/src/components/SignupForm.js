@@ -13,8 +13,6 @@ const SignupForm = () => {
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
-
-  //why arr[] again?
   const[addUser] = useMutation(ADD_USER);
 
   const handleInputChange = (event) => {
