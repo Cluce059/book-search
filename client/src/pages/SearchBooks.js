@@ -67,8 +67,6 @@ const SearchBooks = () => {
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
-    //console.log(token);
-    //console.log(bookToSave);
     if (!token) {
       return false;
     }
@@ -79,7 +77,7 @@ const SearchBooks = () => {
         //give saveBook a book var instead of deconstucting args? */
       await saveBook({
         //set input args to selected book
-        variables: {args: bookToSave},
+        variables: {book: bookToSave},
         /** const handleChange = (event) => {
         const { name, value } = event.target;
           setFormState({
@@ -105,6 +103,7 @@ const SearchBooks = () => {
   };
   
 
+  //define the book obj used in jsx below
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark'>
