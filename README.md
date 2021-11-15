@@ -14,7 +14,7 @@
   - [Questions](#questions)
   ## Installation
   :floppy_disk: 
-  clone the project (prerequisite: node.js, install dependencies) and run 'npm run watch' in your terminal and see what goes on under the hood.
+    code the repository
   ## Usage
   :computer:  Intened for distribution of my personal portfolio 
   ## License
@@ -26,7 +26,6 @@
   :exclamation: 
   Explore the app
   ## URL
-http://cluce059.github.io/portfolio
   ## Questions
   :alien: See my contact section!<br />
   <br />
