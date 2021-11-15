@@ -1,21 +1,27 @@
-// use this to decode a token and get the user's information out of it
+//decode users token
+/**  Try `npm i --save-dev @types/jwt-decode` if it exists or add a new declaration (.d.ts) file containing `declare module 'jwt-decode';`ts(7016)
+https://engineering.zalando.com/posts/2017/07/the-purpose-of-jwt-stateless-authentication.html */
 import decode from 'jwt-decode';
+//import jwt_decode from "jwt-decode";
 
-// create a new class to instantiate for a user
+//import * as JWT from 'jwt-decode';
+//let token = JWT(token);
+
+//new instance of authservice for user
 class AuthService {
   // get user data
   getProfile() {
     return decode(this.getToken());
   }
-
-  // check if user's logged in
+  //ERR area
+  //check if logged in 
   loggedIn() {
-    // Checks if there is a saved token and it's still valid
+    //check for token to validate
     const token = this.getToken();
-    return !!token && !this.isTokenExpired(token); // handwaiving here
+    return !!token && !this.isTokenExpired(token); 
+    // ^handwaiving 
   }
 
-  // check if token is expired
   isTokenExpired(token) {
     try {
       const decoded = decode(token);

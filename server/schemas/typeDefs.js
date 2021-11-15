@@ -11,14 +11,14 @@ type Mutation {
     removeBook(bookId: ID!): User
 }
 type User{ 
-    _id: ID!
+    _id: ID
     username: String!
     email: String
     bookCount: Int
     savedBooks: [Book]
 }
 type Book {
-    _id: ID!
+    _id: ID
     bookId: String
     authors: [String]
     description: String
