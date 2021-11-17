@@ -48,7 +48,6 @@ const SearchBooks = () => {
         authors: book.volumeInfo.authors || ['No author to display'],
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
-        //added link? might help?
         link: book.volumeInfo.infoLink,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
       }));
@@ -86,19 +85,35 @@ const SearchBooks = () => {
         });
         }; */
         update: cache => {
-          //pass me obj to read in books
-          const { me} = cache.readQuery({ query: GET_ME });
-    
-        }
-      });
+          //pass me obj to read in books readquery returns obj of same type
+            const {me} = cache.readQuery({ query: GET_ME });
+            //spread bookstosave to savedbooks which is spread to me user obj
+            cache.writeQuery(
+              {query: GET_ME , 
+              data: {me: {...me, savedBooks: [...me.savedBooks, bookToSave]
+              } 
+            } 
+          })
+          }
+        });
 
-       /**     console.log(response);
+
+       /**     
+        * client.writeQuery({
+  query,
+  data: {
+    todos: [...data.todos, myNewTodo],
+  },
+});
+        * console.log(response);
       if (!response.ok) {
-        throw new Error('something went wrong!');
+
       } */
+    
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (err) {
       console.error(err);
+      
     }
   };
   
